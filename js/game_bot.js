@@ -32,15 +32,27 @@ function foo(quant) {
   if (resRevis) {
     console.log('Это число вы вводили, введите другое');
     quant++;
-  } else if (number > rand) {
+  };
+  
+  if (number > rand) {
     console.log('Больше');
-  } else if (number < rand) {
+  };
+  
+  if (number < rand) {
     console.log('Меньше');
-  } else if (number === rand) {
-    console.log('Верно!');
-  } else {
-    console.log('Введите числовое значение');
+  };
+  
+  if (number === rand) {
+    console.log('Верно! Игра окончена, Вы победили!');
+    quant = 1;
+  };
+  
+  if (Number.isNaN(number) || !(Number.isFinite(number)) ||
+    !(Number.isInteger(number))) {
+    console.log('Не допускается вводить буквы и дробные числа!');
     quant++;
+  } else {
+    console.log('Другая ситуация');
   };
 
   arrNumbers.push(number);
@@ -54,5 +66,3 @@ function foo(quant) {
 };
 
 foo(numberOfTimes);
-
-
